@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhapson-Newton Method</title>
+    <title>Newton-Raphson </title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+    <h1>Newton-Raphson Method</h1>
     <div>
-        <form>
+        <form id="input-fields">
             <label for="function">Function f(x):</label>
+            <math-field id="function"></math-field>
+
+            <label for="initial-value">Initial value:</label>
             <math-field id="initial-value"></math-field>
-            <label for="initial-value">Function f(x):</label>
-            <math-field id="function"></math-field>
-            <label for="function">Function f(x):</label>
-            <math-field id="function"></math-field>
+
+            <label for="error-percent">Percent of Error:</label>
+            <math-field id="error-percent"></math-field>
         </form>
         <button id="calculate">Calculate</button>
     </div>
 
+    <div class="results-wrapper">
+        <table id="results"></table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src ="js/node_modules/polynomial/polynomial.min.js"></script>
     <script src="https://unpkg.com/mathlive"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
