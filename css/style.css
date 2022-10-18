@@ -18,6 +18,10 @@ body{
   background-color:  #eee8f7;
 }
 
+.content-wrapper{
+  display: flex;
+  gap: 5rem;
+}
 h1{
   margin: 5rem;
   margin-bottom: 3rem;
@@ -25,12 +29,12 @@ h1{
   color: #008000;
 }
 math-field {
-    display: block;
-    width: 30vw;
+    width: 20vw;
     background-color: rgb(255, 254, 251);
     border: 0.1rem solid;
     border-radius: 0.5rem;
     flex-grow: 1;
+    flex-shrink: 3;
     padding: 0.2rem 1rem;
     max-height: 100%;
   }
@@ -45,9 +49,9 @@ math-field {
   }
   
 .results-wrapper {
-    width: 60vw;
-    max-height: 80vh;
-    margin: 2.5rem 0;
+    width: 50vw;
+    max-height: 60vh;
+    border: 1px solid #008000;
     overflow: auto;
   }
   
