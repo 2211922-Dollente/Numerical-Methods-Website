@@ -1,8 +1,29 @@
-body{
-    display: block;
-    align-items: center;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html {  
+  scroll-behavior: smooth;
+  width: 100%;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  #eee8f7;
+}
+
+h1{
+  margin: 5rem;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: #008000;
+}
 math-field {
     display: block;
     width: 30vw;
@@ -14,3 +35,61 @@ math-field {
     max-height: 100%;
   }
   
+  #calculate{
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    background-color: white;
+    color: #008000;
+  }
+  
+.results-wrapper {
+    width: 60vw;
+    max-height: 80vh;
+    margin: 2.5rem 0;
+    overflow: auto;
+  }
+  
+  #results {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    overflow-x: auto;
+  }
+  #results th, #results td {
+    padding: 0.8rem 1rem;
+  }
+  #results tr th {
+    background-color:#008000;
+    color: white;
+  }
+  
+  th:first-child {
+    left: 0;
+    position: sticky;
+    z-index: 2;
+  }
+  
+  td:first-child {
+    background-color: inherit;
+    position: sticky;
+    left: 0;
+    z-index: 2000;
+  }
+  
+  #table-header {
+    position: sticky;
+    top: 0;
+  }
+  
+  .table-data {
+    background: white;
+  }
+  
+  .table-data:nth-of-type(odd) {
+    background: #c6ffab;
+  }
+
