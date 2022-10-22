@@ -25,6 +25,9 @@ function calculate(){
     }
 
     generateAnswerTable(iterations);
+
+    let finalResult = $("#final-result");
+    finalResult.append("x = " + x1.toFixed(4));
 }
 
 function generateAnswerTable(iterations){
@@ -38,7 +41,7 @@ function generateAnswerTable(iterations){
 
     for (let i = 0; i < iterations.length; i++) {
         let tr = $('<tr class="table-data"></tr>');
-        console.log(iterations);
+        //console.log(iterations);
         iterations[i].forEach(e => {
             let th = $(`<td>${e}</td>`);
             tr.append(th);
