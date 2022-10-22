@@ -105,4 +105,12 @@ math-field {
     font-size: 1.2rem;
   }
 
+  #error-percent::after{
+    content: "\00a0%";
+  }
+
+  #error-percent {
+    display: flex;
+    align-items: center;
+}
 
