@@ -12,14 +12,37 @@
     <div class = "content-wrapper">
         <div>
             <form id="input-fields">
-                <label for="function">Function f(x):</label>
-                <math-field id="function"></math-field>
+                <div id="input">
+                    <label for="function">Function f(x):</label>
+                    <math-field id="function"></math-field>
+                    <div class="info-icon" data-hover="Input the function">
+                        <span class="info-hover" >
 
-                <label for="initial -value">Initial value:</label>
-                <math-field id="initial-value"></math-field>
+                        </span>
+                    </div>
+                </div>
 
-                <label for="error-percent">Percent of Error:</label>
-                <math-field id="error-percent"></math-field>
+                <div id="input">
+                    <label for="initial-value">Initial value:</label>
+                    <math-field id="initial-value"></math-field>
+                    <div class="info-icon" data-hover="Initial guess for the root">
+                        <span class="info-hover" >
+
+                        </span>
+                    </div>
+                </div>
+
+                <div id="input">
+                    <label for="error-percent">Percent of Error:</label>
+                    <math-field id="error-percent"></math-field>
+                    <div class="info-icon" data-hover="Error estimate of the root">
+                        <span class="info-hover" >
+
+                        </span>
+                    </div>
+                </div>
+                
+
             </form>
             <button id="calculate">Calculate</button>
         </div>

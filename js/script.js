@@ -7,7 +7,7 @@ generateAnswerTable(iterations);
 
 function calculate(){
     $("#results").empty();
-    iterations = [];
+    let iterations = [];
     document.getElementById("results").innerHTML = '';
     let fx = new Polynomial($("#function").val());
     let x1 = $("#initial-value").val();
@@ -16,17 +16,20 @@ function calculate(){
     let derivative = fx.derive(1);
     index = 0;
     while(pe > ea){
+        if(index > 100){
+            break;
+        }
         let x2 = x1 - (fx.eval(x1)/derivative.eval(x1));
         iterations.push([index, x1,pe]);
+        console.log("X:"+ x2 + " ---- " + pe + "%");
         pe= Math.abs((x2-x1)/x2)*100;
         x1 = x2;
         index ++;
-        // console.log("X:"+ x2 + " ---- " + pe + "%");
     }
 
-    generateAnswerTable(iterations);
-
+    generateAnswerTable(iterations);    
     let finalResult = $("#final-result");
+    finalResult.empty();
     finalResult.append("x = " + x1.toFixed(4));
 }
 
@@ -41,7 +44,7 @@ function generateAnswerTable(iterations){
 
     for (let i = 0; i < iterations.length; i++) {
         let tr = $('<tr class="table-data"></tr>');
-        //console.log(iterations);
+        // console.log(iterations);
         iterations[i].forEach(e => {
             let th = $(`<td>${e}</td>`);
             tr.append(th);
