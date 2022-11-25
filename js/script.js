@@ -8,12 +8,22 @@ generateAnswerTable(iterations);
 function calculate(){
     let steps = $("#steps-wrapper");
     steps.empty();
-    $("#results").empty();
-    let iterations = [];
-    document.getElementById("results").innerHTML = '';
+
     let fx = new Polynomial($("#function").val());
     let x1 = $("#initial-value").val();
     var ea = $("#error-percent").val() /100;
+
+    console.log(fx);
+    console.log(x1);
+    console.log(ea);
+    if(fx == 0 || isNaN(x1) || ea == 0|| isNaN(ea)){ 
+        return;
+    }
+    
+    $("#results").empty();
+    let iterations = [];
+    document.getElementById("results").innerHTML = '';
+    
     let pe = 1;                                     //Percent Error
     let derivative = fx.derive(1);                  //get the 1st derivative
     index = 0;
@@ -31,7 +41,6 @@ function calculate(){
     `);
 
     while(pe > ea){
-        
         let fxValue = Math.round(((fx.eval(x1)) + Number.EPSILON) * 1000000) / 1000000;
         let dxValue = Math.round(((derivative.eval(x1)) + Number.EPSILON) * 1000000) / 1000000;
         let x2 = Math.round(((x1 - (fxValue/dxValue)) + Number.EPSILON) * 1000000) / 1000000; 
