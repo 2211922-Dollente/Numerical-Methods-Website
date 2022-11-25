@@ -19,16 +19,18 @@ function calculate(){
     index = 0;
     iterations.push([index, x1,pe]);
     index ++;
-    steps.append(`<h3>Problem:</h3>`);
-    steps.append(`<p>f(x) = ${fx}</p>`);
-    steps.append(`<p>f'(x) = ${derivative}:</p>`);
-    steps.append(`<p>Initial Value = ${x1}:</p>`);
-    steps.append(`<p>Percent of error = ${ea}:</p><br>`);
+    steps.append(`
+    <h2>Step-by-Step Solution</h2>
+    <dl>
+        <dt>Problem:</dt>
+        <dd>&nbsp<math-field read-only>f(x) = ${fx}</math-field></dd>
+        <dd>&nbsp<math-field read-only>f'(x) = ${derivative}</math-field></dd>
+        <dd>&nbspInitial Value = ${x1}</dd>
+        <dd>&nbspPercent of error = ${ea}</dd> 
+    </dl> <br>  
+    `);
 
     while(pe > ea){
-        if(index > 100){
-            break;
-        }
         
         let fxValue = Math.round(((fx.eval(x1)) + Number.EPSILON) * 1000000) / 1000000;
         let dxValue = Math.round(((derivative.eval(x1)) + Number.EPSILON) * 1000000) / 1000000;
@@ -39,12 +41,19 @@ function calculate(){
         let fds = derivative.toString().replace(/x/gi, `(${x1})`); 
         x1 = x2;
 
-
-        steps.append(`<h3>Iteration ${index}:</h3>`);
-        steps.append(`<math-field read-only>f(x) = ${fts} = ${fxValue}</math-field>`);
-        steps.append(`<math-field read-only>f'(x) = ${fds} = ${dxValue}</math-field>`);
-        steps.append(`<math-field read-only>X<sub>${index+1}</sub> = ${x1} - \\frac{${fxValue}}{${dxValue}}  =  ${x2}</math-field>`);
-        steps.append(`<math-field read-only>e<sub>a</sub> = \\frac{${x2}-${x1}}{${x2}} * 100 = ${pe}</math-field><br>`);
+        if(index > 100 || pe < ea){
+            break;
+        }
+        steps.append(`
+        <dl>
+            <dt>Iteration ${index}:</dt>
+            <dd>&nbsp<math-field read-only>f(x) = ${fts} = ${fxValue}</math-field></dd>
+            <dd>&nbsp<math-field read-only>f'(x) = ${fds} = ${dxValue}</math-field></dd>
+            <dd>&nbsp<math-field read-only>X \\scriptstyle{${index+1}} \\displaystyle = ${x1} - \\frac{${fxValue}}{${dxValue}}  =  ${x2}</math-field></dd>
+            <dd>&nbsp<math-field read-only>ε \\scriptstyle{a} \\displaystyle = \\frac{${x2}-${x1}}{${x2}} \\times 100 = ${pe} </math-field><span>&nbsp%</span></dd> 
+         </dl> <br>  
+        `);
+        
         
         iterations.push([index, x1,pe]);
         index ++;
@@ -53,7 +62,7 @@ function calculate(){
     generateAnswerTable(iterations);    
     let finalResult = $("#final-result");
     finalResult.empty();
-    finalResult.append("x = " + x1.toFixed(4));
+    finalResult.append("x = " + Number(x1).toFixed(4));
 }
 
 function generateAnswerTable(iterations){

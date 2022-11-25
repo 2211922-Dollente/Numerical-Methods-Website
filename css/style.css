@@ -22,6 +22,7 @@ body{
   display: flex;
   gap: 2rem;
 }
+
 h1{
   margin: 5rem;
   margin-bottom: 3rem;
@@ -137,13 +138,34 @@ h1{
 }
 
 #steps-wrapper {
-  display: grid;
+  display: flex;
   width: 80vw;
+  flex-direction: column ;
   justify-content: center;
   gap: 0.5rem;
   margin: 1rem;
   margin-top: 2rem;
 }
+dl{
+  text-indent: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+dt{
+  font-size: 1.3rem;
+}
+dd{
+  display: flex;
+  text-indent: 4rem;
+
+}
+dd span{
+  display: flex;
+  text-indent: 0rem;
+  align-items: center;
+}
+
 .info-icon{
   width: 2rem;
   height: 2rem;
@@ -174,3 +196,4 @@ h1{
   opacity: 1;
   visibility: visible;
 }
+
