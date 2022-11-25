@@ -13,9 +13,6 @@ function calculate(){
     let x1 = $("#initial-value").val();
     var ea = $("#error-percent").val() /100;
 
-    console.log(fx);
-    console.log(x1);
-    console.log(ea);
     if(fx == 0 || isNaN(x1) || ea == 0|| isNaN(ea)){ 
         return;
     }
