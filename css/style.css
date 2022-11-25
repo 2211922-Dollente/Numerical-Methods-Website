@@ -136,10 +136,13 @@ h1{
   max-height: 100%;
 }
 
-#steps-wrapper{
-  display: block;
+#steps-wrapper {
+  display: grid;
   width: 80vw;
-  
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+  margin-top: 2rem;
 }
 .info-icon{
   width: 2rem;

@@ -23,7 +23,7 @@ function calculate(){
     steps.append(`<p>f(x) = ${fx}</p>`);
     steps.append(`<p>f'(x) = ${derivative}:</p>`);
     steps.append(`<p>Initial Value = ${x1}:</p>`);
-    steps.append(`<p>Percent of error = ${ea}:</p>`);
+    steps.append(`<p>Percent of error = ${ea}:</p><br>`);
 
     while(pe > ea){
         if(index > 100){
@@ -44,7 +44,7 @@ function calculate(){
         steps.append(`<math-field read-only>f(x) = ${fts} = ${fxValue}</math-field>`);
         steps.append(`<math-field read-only>f'(x) = ${fds} = ${dxValue}</math-field>`);
         steps.append(`<math-field read-only>X<sub>${index+1}</sub> = ${x1} - \\frac{${fxValue}}{${dxValue}}  =  ${x2}</math-field>`);
-        steps.append(`<math-field read-only>e<sub>a</sub> = \\frac{${x2}-${x1}}{${x2}} * 100 = ${pe}</math-field>`);
+        steps.append(`<math-field read-only>e<sub>a</sub> = \\frac{${x2}-${x1}}{${x2}} * 100 = ${pe}</math-field><br>`);
         
         iterations.push([index, x1,pe]);
         index ++;
