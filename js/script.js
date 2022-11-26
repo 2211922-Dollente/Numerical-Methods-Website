@@ -1,4 +1,6 @@
-
+// Add keyboards
+addKeyboard("function");
+addKeyboard("initial-value");
 
 var button = document.getElementById('calculate')
 
@@ -92,8 +94,9 @@ function generateAnswerTable(iterations){
     }
 }
 
-document.getElementById("function").setOptions({
-    virtualKeyboardMode: "manual",
-    virtualKeyboards: "numeric symbols"
-    // virtualKeyboardLayout: 'dvorak'
+function addKeyboard(id){
+    document.getElementById(id).setOptions({
+        virtualKeyboardMode: "manual",
+        virtualKeyboards: "numeric symbols functions",
     });
+}

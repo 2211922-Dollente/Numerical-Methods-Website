@@ -10,6 +10,7 @@ html {
   width: 100%;
 }
 body{
+  --keyboard-background-border: red;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -17,7 +18,23 @@ body{
   align-items: center;
   background-color:  #eee8f7;
   overflow-x: hidden;
-  --keyboard-zindex: 3000;
+
+}
+
+.keyboard-layer{
+  color: black;
+  background-color: #c6ffab;
+  --keyboard-text: #505115;
+  --keyboard-text-active: black;
+  --keycap-background: #008000;
+  --keycap-background-active: #eee8f7;
+  --keycap-secondary-text: #eee8f7;
+  --keycap-modifier-background: rgb(99, 98, 98);
+
+}
+
+math-field::part(virtual-keyboard-toggle){
+  color: #008000;
 }
 
 .content-wrapper{
@@ -127,6 +144,7 @@ h1{
   align-items: center;
   gap: 0.5rem;
   margin: 0.5rem;
+
 }
 .input{
   width: 15vw;
@@ -221,4 +239,8 @@ footer {
 }
 .output math-field:focus, .output math-field:focus-within {
   outline: none;
+} */
+
+/* .virtualKeyboardContainer {
+  position: relative;
 } */
