@@ -4,9 +4,7 @@
   margin: 0;
   padding: 0;
 }
-p {
-  text-align: center;
-}
+
 html {  
   scroll-behavior: smooth;
   width: 100%;
@@ -78,7 +76,7 @@ h1{
   }
 
 .results-wrapper {
-    width: 50vmax;
+    width: 40vmax;
     max-height: 60vh;
     border: 1px solid #008000;
     overflow: auto;
@@ -152,7 +150,7 @@ h1{
 
 }
 .input{
-  width: 25vw;
+  width: 30vw;
   background-color: rgb(255, 254, 251);
   border: 0.1rem solid;
   border-radius: 0.5rem;
@@ -227,7 +225,6 @@ dd span{
   visibility: visible;
 }
 
-
 .section-heading {
   font-size: 3vh;
   align-items: center;
@@ -239,10 +236,8 @@ dd span{
 
 .newton-raphson{
   text-align: center;
-  
+
 }
-
-
 
 footer {
   width: 100%;
@@ -276,7 +271,12 @@ footer {
   .content-wrapper{
     display: inline-block;
   }
-
+  .input{
+    width: 40vmin;
+  }
+  .results-wrapper{
+    width: 70vmin;
+  }
   button#calculate{
     margin-top: 1rem;
     margin-bottom: 1rem;
