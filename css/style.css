@@ -8,6 +8,7 @@
 html {  
   scroll-behavior: smooth;
   width: 100%;
+  overflow-x: hidden;
 }
 body{
   --keyboard-background-border: red;
@@ -271,12 +272,7 @@ footer {
   .content-wrapper{
     display: inline-block;
   }
-  .input{
-    width: 40vmin;
-  }
-  .results-wrapper{
-    width: 70vmin;
-  }
+  
   button#calculate{
     margin-top: 1rem;
     margin-bottom: 1rem;
