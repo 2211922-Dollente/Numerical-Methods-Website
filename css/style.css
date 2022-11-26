@@ -68,6 +68,7 @@ h1{
     -webkit-background-clip: text,padding-box;
     background-clip: text,padding-box;
     transition: 0.3s;
+    
   }
   
   #calculate:hover{
@@ -75,10 +76,11 @@ h1{
   }
 
 .results-wrapper {
-    width: 50vw;
+    width: 50vmax;
     max-height: 60vh;
     border: 1px solid #008000;
     overflow: auto;
+    flex-shrink: 0;
   }
   
   #results {
@@ -88,6 +90,7 @@ h1{
     border-bottom: 1px solid #dddddd;
     text-align: left;
     overflow-x: auto;
+    
   }
   #results th, #results td {
     padding: 0.8rem 1rem;
@@ -244,3 +247,19 @@ footer {
 /* .virtualKeyboardContainer {
   position: relative;
 } */
+@media (max-width: 768px){
+  body {
+    text-align: center; 
+    display: flex;
+   }
+
+  .content-wrapper{
+    display: inline-block;
+  }
+
+  button#calculate{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+}
