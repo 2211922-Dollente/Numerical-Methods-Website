@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
 }
-
+p {
+  text-align: center;
+}
 html {  
   scroll-behavior: smooth;
   width: 100%;
@@ -18,7 +20,7 @@ body{
   align-items: center;
   background-color:  #eee8f7;
   overflow-x: hidden;
-
+  font-family: 'Lato', sans-serif;
 }
 
 .keyboard-layer{
@@ -150,7 +152,7 @@ h1{
 
 }
 .input{
-  width: 15vw;
+  width: 25vw;
   background-color: rgb(255, 254, 251);
   border: 0.1rem solid;
   border-radius: 0.5rem;
@@ -158,6 +160,7 @@ h1{
   flex-shrink: 3;
   padding: 0.2rem 1rem;
   max-height: 100%;
+  overflow-x:auto;
 }
 
 #steps-wrapper {
@@ -223,6 +226,23 @@ dd span{
   opacity: 1;
   visibility: visible;
 }
+
+
+.section-heading {
+  font-size: 3vh;
+  align-items: center;
+  display: block;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+
+.newton-raphson{
+  text-align: center;
+  
+}
+
+
 
 footer {
   width: 100%;
