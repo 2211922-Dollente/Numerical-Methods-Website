@@ -1,4 +1,5 @@
 
+
 var button = document.getElementById('calculate')
 
 button.addEventListener('click', calculate);
@@ -91,6 +92,8 @@ function generateAnswerTable(iterations){
     }
 }
 
-function showSteps(){
-
-}
+document.getElementById("function").setOptions({
+    virtualKeyboardMode: "manual",
+    virtualKeyboards: "numeric symbols"
+    // virtualKeyboardLayout: 'dvorak'
+    });

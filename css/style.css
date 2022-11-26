@@ -16,6 +16,8 @@ body{
   flex-direction: column;
   align-items: center;
   background-color:  #eee8f7;
+  overflow-x: hidden;
+  --keyboard-zindex: 3000;
 }
 
 .content-wrapper{
@@ -139,7 +141,8 @@ h1{
 
 #steps-wrapper {
   display: flex;
-  width: 80vw;
+  flex-wrap: nowrap;
+  width: 70vw;
   flex-direction: column ;
   justify-content: center;
   gap: 0.5rem;
@@ -149,6 +152,7 @@ h1{
 dl{
   text-indent: 2rem;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -158,12 +162,14 @@ dt{
 dd{
   display: flex;
   text-indent: 4rem;
+  flex-wrap: nowrap;
 
 }
 dd span{
   display: flex;
   text-indent: 0rem;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .info-icon{
@@ -197,3 +203,22 @@ dd span{
   visibility: visible;
 }
 
+footer {
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid black;
+  padding: 0.5rem 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: #eee8f7;
+  height: 2rem;
+}
+
+/* .output:focus-within {
+  outline: Highlight auto 1px;
+  outline: -webkit-focus-ring-color auto 1px
+}
+.output math-field:focus, .output math-field:focus-within {
+  outline: none;
+} */
