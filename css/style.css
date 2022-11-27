@@ -11,6 +11,22 @@ html {
   height: 100vh;
   overflow-x: hidden;
 }
+
+p {
+  
+  font-size: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  text-align: center;
+  border : 90px solid #ccc;
+}
+h2 {
+  text-align: center;
+  font-size: 3vh;
+  margin-left: 5rem;
+  margin-right: 5rem;
+
+}
 body{
   display: flex;
   flex-direction: column;
@@ -302,4 +318,5 @@ footer {
     margin: 2px;
     width: 95vw;
   }
+
 }
