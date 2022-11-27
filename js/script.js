@@ -15,13 +15,11 @@ var iterations = [];
 // generateAnswerTable(iterations);
 
 function calculate(){
-    let steps = $("#steps-wrapper");                        //clear steps
+    let finalResult = $("#final-result");           //clear contents
+    finalResult.empty();
+    let steps = $("#steps-wrapper");                        
     steps.empty();
-
-    // let fx = new Polynomial($("#function").val());
     let fx = $("#function").val();
-    console.log(fx.toString());
-    console.log(fx.length);
     let variable = findVariable(fx);            
     let x1 = $("#initial-value").val();
     var ea = $("#error-percent").val() /100;
@@ -37,7 +35,6 @@ function calculate(){
     let pe = 1;                                         //Percent Error
     // let derivative = fx.derive(1);                  //get the 1st derivative
     let derivative = math.derivative(fx,variable).toString();                //get the 1st derivative
-    console.log("Derivative: " + derivative);
     index = 0;
     iterations.push([index, x1,pe]);
     index ++;
@@ -84,8 +81,6 @@ function calculate(){
     }
 
     generateAnswerTable(iterations);    
-    let finalResult = $("#final-result");
-    finalResult.empty();
     finalResult.append(variable+ " = " + Number(x1).toFixed(4));
 }
 
@@ -97,12 +92,10 @@ function findVariable(fx) {         //returns the variable used in the function
         for (j = 0; j < alpha.length; j++) {
             if (fx[i].toLowerCase() == alpha[j]) {
                 variable = fx[i];
-                console.log(variable);
                 break;
             }
         }
         if (variable == fx[i]) {
-            console.log("break");
             break;
         }
     }
