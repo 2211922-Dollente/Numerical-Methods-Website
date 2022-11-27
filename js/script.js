@@ -1,7 +1,12 @@
 // Add keyboards
-addKeyboard("function");
-addKeyboard("initial-value");
-
+var mq = window.matchMedia( "(max-width: 768px)" );
+if (mq.matches) {
+    addKeyboard("function", "onfocus");
+    addKeyboard("initial-value", "onfocus");
+}else {
+    addKeyboard("function", "manual");
+    addKeyboard("initial-value", "manual");
+}
 var button = document.getElementById('calculate')
 
 button.addEventListener('click', calculate);
@@ -94,9 +99,9 @@ function generateAnswerTable(iterations){
     }
 }
 
-function addKeyboard(id){
+function addKeyboard(id, mode){
     document.getElementById(id).setOptions({
-        virtualKeyboardMode: "manual",
-        virtualKeyboards: "numeric symbols functions",
+        virtualKeyboardMode: mode,
+        virtualKeyboards: "numeric roman symbols functions ",
     });
 }
