@@ -18,15 +18,15 @@ p {
   margin-left: 5rem;
   margin-right: 5rem;
   text-align: center;
-  border : 90px solid #ccc;
+  border : 5px solid black;
 }
 h2 {
   text-align: center;
   font-size: 3vh;
   margin-left: 5rem;
   margin-right: 5rem;
-
 }
+
 body{
   display: flex;
   flex-direction: column;
